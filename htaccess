@@ -9,13 +9,13 @@ RewriteEngine on
 # Rewrite all calls that are not in public directory to index.php
 #RewriteCond %{REQUEST_URI} !(css$|jpg$|png$|js$|/index.php$)
 #RewriteCond %{REQUEST_URI} !(/public/(.*)css$|/index.php?)
-RewriteCond %{REQUEST_URI} !(/public/docs/css/(.*)css$|/index.php?|^/feed/$)
-RewriteCond %{REQUEST_FILENAME} !(jpg$|png$)
+RewriteCond %{REQUEST_URI} !(/public/docs/css/(.*)css$|/index.php?|^/feed.atom$)
+RewriteCond %{REQUEST_FILENAME} !(jpg$|png$|gif$)
 RewriteCond %{REQUEST_FILENAME} !(js$)
 RewriteRule ^(.*) http://%{HTTP_HOST}/index.php [R,L]
 
-RewriteCond %{REQUEST_URI} (.+)\.(atom)$
-RewriteRule ^(.*) http://%{HTTP_HOST}/feed/ [R,L]
+# RewriteCond %{REQUEST_URI} (.+)\.(atom)$
+# RewriteRule ^(.*) http://%{HTTP_HOST}/feed/feed.atom [R,L]
 
 # Rewrite any calls to *.html, *.json, *.xml, *.atom, *.rss, *.rdf or *.txt if a folder matching * exists
 #RewriteCond %{REQUEST_FILENAME} !-f
