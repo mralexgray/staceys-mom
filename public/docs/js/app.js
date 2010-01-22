@@ -42,23 +42,24 @@ $(document).ready(function() {
   });
 
   // alert($('#coda-slider-1'));
-  $('#coda-slider-1').codaSlider({
-     dynamicArrows: false
+  // $('#coda-slider-1').codaSlider({
+  //    dynamicArrows: false
+  // });
+  // 
+  // $('#coda-slider-2').codaSlider({
+  //    dynamicArrows: false
+  // });
+  // $('#coda-slider-3').codaSlider({
+  //    dynamicArrows: false
+  // });
+  $('a.projimg').zoomimage({
+    caption: false,
+    centered: true
   });
-
-  $('#coda-slider-2').codaSlider({
-     dynamicArrows: false
-  });
-  $('#coda-slider-3').codaSlider({
-     dynamicArrows: false
-  });
-  $("#projdata3").hide().fadeOut();
-  $("#projdata2").hide().fadeOut();
-  $("#projdata1").hide().fadeOut();  
 });
 
 function toggleProject(projectID) {
   var options = {};
   var projidstring = "#projdata" + projectID;
-  $(projidstring).toggle('blind');
+  $(projidstring).toggle('drop', options, 300);
 }

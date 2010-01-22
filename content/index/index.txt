@@ -1,8 +1,3 @@
 page_description: My Description
 -
 title: My title
--
-about_text:
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae massa lorem. Phasellus non nunc sit amet lorem egestas lobortis id eget enim.
-
-Quisque fermentum, nulla eu condimentum convallis, erat diam semper ligula, ut congue libero sem et diam. Nullam urna ligula, fringilla dignissim ornare nec, interdum id magna. Vivamus sit amet lacus quam. Aliquam mi massa, condimentum et consequat eget, faucibus id massa. Praesent egestas, leo vitae ullamcorper luctus, nulla felis rhoncus turpis, nec viverra quam est eget felis. Sed ornare lacinia nisl. In id mauris eu orci dictum sodales. Fusce vitae ligula turpis, nec sollicitudin nisl. 
