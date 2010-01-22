@@ -48,17 +48,17 @@ Class PageData {
 	
 	static function get_thumbnail($file_path) {
 	  
-    ob_start();
-    $firephp = FirePHP::getInstance(true);
-    $firephp->log($file_path, 'filepath');
+    // ob_start();
+    // $firephp = FirePHP::getInstance(true);
+    // $firephp->log($file_path, 'filepath');
 
 		$thumbnails = array_keys(Helpers::list_files($file_path, '/thumb\.(gif|jpg|png|jpeg)$/i', false));
-    $firephp->log($thumbnails, 'thumbnails');
+    // $firephp->log($thumbnails, 'thumbnails');
 		# replace './content' with relative path back to the root of the app
 		$relative_path = preg_replace('/^\.\//', Helpers::relative_root_path(), $file_path);
-		$firephp->log($relative_path, 'rel path');
-		$firephp->log($relative_path.'/'.$thumbnails[0], 'together');
-    ob_end_flush();
+    // $firephp->log($relative_path, 'rel path');
+    // $firephp->log($relative_path.'/'.$thumbnails[0], 'together');
+    // ob_end_flush();
 		return (!empty($thumbnails)) ? $relative_path.'/'.$thumbnails[0] : false;
 	}
 	
@@ -167,11 +167,6 @@ Class PageData {
 		
 		# $children
 		$page->children = Helpers::list_files($page->file_path, '/^\d+?\./', true);
-    // ob_start();
-    // $children = Helpers::list_files($page->file_path, '/^\d+?\./', true);
-    //     $firephp = FirePHP::getInstance(true);
-    //     $firephp->log($children, 'Children');
-    //     ob_end_flush();
 	}
 	
 	static function create_asset_collections($page) {

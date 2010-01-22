@@ -13,7 +13,11 @@ a {
 /* Typography */
 
 body {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande"," Lucida Sans", Arial, sans-serif;
+/*  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande"," Lucida Sans", Arial, sans-serif;*/
+/*  font-family: "Franklin Gothic Medium", "Arial Narrow Bold", Arial, sans-serif;*/
+/*font-family: Futura, "Century Gothic", AppleGothic, sans-serif;*/
+/*  font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;*/
+  font-family: "Lucida Grande", Tahoma, Verdana, Sans-Serif;
   line-height: 1.3;
 }
 
@@ -179,7 +183,7 @@ img.thumb {
   margin: 0 0 20px 0;
 }
 #side p {
-  margin: 20px 0 0 0;
+  margin: 20px 0;
 }
 /* Javascript-enabled styles */
 body.js-enabled p#gallery-count, body.js-enabled div#gallery-navigation {

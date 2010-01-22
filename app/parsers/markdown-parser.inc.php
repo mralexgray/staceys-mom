@@ -1464,7 +1464,7 @@ class Markdown_Parser {
 			>
 			}xi',
 			array(&$this, '_doAutoLinks_email_callback'), $text);
-
+    
 		return $text;
 	}
 	function _doAutoLinks_url_callback($matches) {
@@ -1512,10 +1512,9 @@ class Markdown_Parser {
 			}
 		}
 		
-		$addr = implode('', $chars);
+		$addr = implode('', $chars);    
 		$text = implode('', array_slice($chars, 7)); # text without `mailto:`
 		$addr = "<a href=\"$addr\">$text</a>";
-
 		return $addr;
 	}
 
