@@ -80,4 +80,4 @@ Gallery = {
 			marginLeft: (num * this.descriptionWidth) * -1 + "px"
 		}, { duration: 600, queue: false });
 	}
-}
+};

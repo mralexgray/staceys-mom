@@ -22,7 +22,7 @@ Class Stacey {
 	
 	function php_fixes() {
 		# in PHP/5.3.0 they added a requisite for setting a default timezone, this should be handled via the php.ini, but as we cannot rely on this, we have to set a default timezone ourselves
-		if(function_exists('date_default_timezone_set')) date_default_timezone_set('Australia/Melbourne');
+		if(function_exists('date_default_timezone_set')) date_default_timezone_set('America/Chicago');
 	}
 	
 	function set_content_type($template_file) {
@@ -63,6 +63,7 @@ Class Stacey {
 	function etag_expired($cache) {
 		header('Etag: "'.$cache->hash.'"');
 		if(isset($_SERVER['HTTP_IF_NONE_MATCH']) && stripslashes($_SERVER['HTTP_IF_NONE_MATCH']) == '"'.$cache->hash.'"') {
+		  
 			# local cache is still fresh, so return 304
 			header("HTTP/1.0 304 Not Modified");
 			header('Content-Length: 0');
@@ -76,6 +77,7 @@ Class Stacey {
 		$cache = new Cache($page);
 		# set any custom headers
 		$this->set_content_type($page->template_file);
+		
 		# if etag is still fresh, return 304 and don't render anything
 		if(!$this->etag_expired($cache)) return;
 		# if cache has expired

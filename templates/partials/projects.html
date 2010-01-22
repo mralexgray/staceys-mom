@@ -1,0 +1,17 @@
+if $siblings do
+  <a name="projects"></a>
+  <ol id="projects" class="col eight">
+  foreach $siblings do
+    <li class="col eight">
+			<h2 class=" ">
+				@title
+			</h2>
+				
+				if @thumb do <img src="@thumb" class="thumb" alt=""> endif
+				@content
+				:media
+        <em class="date">@date</em>
+		</li>
+	endforeach
+	</ol>
+endif

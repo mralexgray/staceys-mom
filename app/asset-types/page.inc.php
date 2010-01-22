@@ -10,6 +10,7 @@ Class Page {
 	var $all_pages;
 	
 	function __construct($url) {
+	  
 		# store url and converted file path
 		$this->url_path = $url;
 		$this->file_path = Helpers::url_to_file_path($this->url_path);
@@ -29,6 +30,10 @@ Class Page {
 	}
 	
 	function parse_template() {
+    // ob_start();
+    //     $firephp = FirePHP::getInstance(true);
+    //     $firephp->log($this->data, 'This Data');
+    //     ob_end_flush();
 		return TemplateParser::parse($this->data, file_get_contents($this->template_file));
 	}
 	
@@ -36,9 +41,11 @@ Class Page {
 	function __set($name, $value) {
 	  $prefix = is_array($value) ? '$' : '@';
 		$this->data[$prefix.strtolower($name)] = $value;
+		
 	}
 	
 	function template_name() {
+	  
 		$txts = array_keys(Helpers::list_files($this->file_path, '/\.txt$/'));
 		# return first matched .txt file
 		return (!empty($txts)) ? preg_replace('/\.txt$/', '', $txts[0]) : false;

@@ -1,6 +1,8 @@
-name: Ñame
+title: My Portfolio
 -
-profession: Gräphic Designer
+name: My Name 
+-
+profession: my profession
 -
 email: 
 <hi@yourdomain.com>
