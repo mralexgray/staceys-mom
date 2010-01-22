@@ -2,15 +2,26 @@ if $siblings do
   <a name="projects"></a>
   <ol id="projects" class="col eight">
   foreach $siblings do
-    <li class="col eight">
-			<h2 class=" ">
-				@title
-			</h2>
-				
-				if @thumb do <img src="@thumb" class="thumb" alt=""> endif
-				@content
-				:media
+    <li class="col eight" id="proj@number">
+			<h2>
+				<a name="project@number"></a>
+				<a href="#project@number" onClick='toggleProject("@number");'>@title</a>
+			</h2>  
         <em class="date">@date</em>
+        
+			  <div id="projdata@number">
+				if @thumb do <img src="@thumb" class="thumb" alt=""> endif
+				
+  				@content
+  				if $images do
+    				<div class="coda-slider-wrapper">
+            	<div class="coda-slider preload" id="coda-slider-@number">
+          
+      				:images
+      				</div>
+    				</div>
+    			endif
+				</div>
 		</li>
 	endforeach
 	</ol>

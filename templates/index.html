@@ -4,10 +4,16 @@
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 		<title>@name's Portfolio </title>
+		<?php
+		// TODO Fix atom or change to RSS
+		?>
 		<link rel="alternate" type="application/atom+xml" href="@root_path/feed/">
 		<link rel="stylesheet" href="public/docs/css/screen.css" type="text/css" media="screen">
-		<script type="text/javascript" src="public/docs/js/jquery.js"></script>		
-		<script type="text/javascript" src="public/docs/js/jquery-ui.js"></script>				
+		<link rel="stylesheet" href="public/docs/css/coda-slider.css" type="text/css" media="screen">
+		<script type="text/javascript" src="public/docs/js/jquery.js"></script>	
+		<script type="text/javascript" src="public/docs/js/jquery-ui.js"></script>
+		<script type="text/javascript" src="public/docs/js/jquery-easing.js"></script>
+		<script type="text/javascript" src="public/docs/js/jquery-coda-slider.js"></script>
 		<script type="text/javascript" src="public/docs/js/app.js"></script>
 	</head>
 	<body>
@@ -21,10 +27,13 @@
 			
 			
 			<div id="content" class="col eight">
+			  <?php // TODO Fix img slideshow 
+			  ?>
 			  :projects
 			</div>
 			<div class="col four" id="side">
 			:about
+			<hr>
 			:contact
 			</div>
 			<hr>

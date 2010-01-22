@@ -6,3 +6,6 @@ profession: my profession
 -
 email: 
 <hi@yourdomain.com>
+-
+myemail:
+hi@domain.com

@@ -137,7 +137,9 @@ if (isset($wp_version)) {
 		$mdwp_placeholders = explode(' ', str_rot13(
 			'pEj07ZbbBZ U1kqgh4w4p pre2zmeN6K QTi31t9pre ol0MP1jzJR '.
 			'ML5IjmbRol ulANi1NsGY J7zRLJqPul liA8ctl16T K9nhooUHli'));
+
 	}
+	
 	
 	function mdwp_add_p($text) {
 		if (!preg_match('{^$|^<(p|ul|ol|dl|pre|blockquote)>}i', $text)) {
@@ -1441,9 +1443,12 @@ class Markdown_Parser {
 
 
 	function doAutoLinks($text) {
+    // ob_start();
+    // $firephp = FirePHP::getInstance(true) or die("owiefjiwe");
+    // $firephp->log($text, 'TEXT1');
 		$text = preg_replace_callback('{<((https?|ftp|dict):[^\'">\s]+)>}i', 
 			array(&$this, '_doAutoLinks_url_callback'), $text);
-
+    // $firephp->log($text, 'TEXT2');
 		# Email addresses: <address@domain.foo>
 		$text = preg_replace_callback('{
 			<
@@ -1465,6 +1470,8 @@ class Markdown_Parser {
 			}xi',
 			array(&$this, '_doAutoLinks_email_callback'), $text);
     
+    // $firephp->log($text, 'TEXT3');
+    // ob_end_flush();
 		return $text;
 	}
 	function _doAutoLinks_url_callback($matches) {
@@ -1474,8 +1481,15 @@ class Markdown_Parser {
 	}
 	function _doAutoLinks_email_callback($matches) {
 		$address = $matches[1];
+    ob_start();
+    $firephp = FirePHP::getInstance(true) or die("owiefjiwe");
+    $firephp->log($address, 'address');
 		$link = $this->encodeEmailAddress($address);
+    $firephp->log($link, 'link');
+    $hashed = $this->hashPart($link);
+    $firephp->log($hashed, 'hashed');
 		return $this->hashPart($link);
+    ob_end_flush();
 	}
 
 

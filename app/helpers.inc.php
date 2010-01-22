@@ -59,7 +59,8 @@ Class Helpers {
 			if(preg_match($regex, $slug[1])) $files[$slug[1]] = $file;
 		}
 		# sort list in reverse-numeric order
-		krsort($files, SORT_NUMERIC);
+		ksort($files, SORT_NUMERIC);
+		
 		return $files;
 	}
 	
@@ -106,6 +107,7 @@ Class Helpers {
     }
     return str_replace(array_keys($mapping), $mapping, $string);
   }
+	
 	
 }
 
