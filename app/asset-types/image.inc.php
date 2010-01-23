@@ -13,10 +13,10 @@ Class Image extends Asset {
 		$this->data['@thumb_file_name'] = $thumb_file_name;
     $this->thumb_link_path = preg_replace('/^\.[\w\d\/\.-]+\//', '$0thumbs/t$1', $this->link_path);
 		$this->data['@turl'] = $this->thumb_link_path;
-    ob_start();
-    $firephp = FirePHP::getInstance(true);
-    $firephp->log($this->data, 'DATA');
-    ob_end_flush();
+    // ob_start();
+    // $firephp = FirePHP::getInstance(true);
+    // $firephp->log($this->data, 'DATA');
+    // ob_end_flush();
 		# create and store additional data required for this asset
 		$this->set_extended_data($file_path);
 	}

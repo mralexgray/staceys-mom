@@ -1,0 +1,42 @@
+page_description: My Description
+-
+title: My Portfolio
+-
+name: My Name 
+-
+profession: my profession
+-
+email:
+<hi@yourdomain.com>
+-
+tagline: My tagline is great!
+-
+about_text:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae massa lorem. Phasellus non nunc sit amet lorem egestas lobortis id eget enim.
+
+Quisque fermentum, nulla eu condimentum convallis, erat diam semper ligula, ut congue libero sem et diam. Nullam urna ligula, fringilla dignissim ornare nec, interdum id magna.
+-
+texttitle:
+##Open Space
+-
+skills_text:
+
+###Web
+  + PHP HTML 
+  + SQL SEO 
+  + Flash MySQL
+###Others
+  - .NET WordPress
+  - Java CSS Mobile
+  - C
+###More
+  - JavaScript iPhone
+  - AJAX Facebook Joomla! PayPal
+###Awesome
+  - Social Networking ASP Web Services Twitter
+  - XHTML Windows XML Flex Software Testing
+-
+text:
+Vivamus sit amet lacus quam. Aliquam mi massa, condimentum et consequat eget, faucibus id massa. Praesent egestas, leo vitae ullamcorper luctus, nulla felis rhoncus turpis, nec viverra quam est eget felis. 
+
+Sed ornare lacinia nisl. In id mauris eu orci dictum sodales. Fusce vitae ligula turpis, nec sollicitudin nisl.

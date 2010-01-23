@@ -1,5 +1,10 @@
 /* Colours */
-
+h2 {
+  font-size: 18px;
+}
+h3 {
+  font-size: 14px;
+}
 body, a {
   color: #222;
 }
@@ -13,7 +18,7 @@ a {
 /* Typography */
 
 body {
-  font-family: "Lucida Grande", Tahoma, Verdana, Sans-Serif;
+font-family: "Lucida Grande", Tahoma, Verdana, Sans-Serif;
   line-height: 1.3;
 }
 
@@ -196,11 +201,20 @@ display: inline;
   margin: 10px 0 0 0px;
 
 }
+#side input, #side textarea {
+  
+  font-family: "Lucida Grande", Tahoma, Verdana, Sans-Serif;
+  font-size: 12px;
+}
 #side input {
   margin: 10px 0 0 0px;
 }
 #side textarea {
   margin: 10px 0 0 0px;
+}
+#side input.sendbutton {
+  margin: 15px 0 10px 0;
+  font-size: 13px;
 }
 #side div.stupidemailp p{
   display: inline;

@@ -186,33 +186,34 @@ Class PageData {
 	}
 	
 	static function create_textfile_vars($page) {
-	  # store contents of content file (if it exists, otherwise, pass back an empty string)
-		$content_file_path = $page->file_path.'/'.$page->template_name.'.txt';
-		$text = (file_exists($content_file_path)) ? file_get_contents($content_file_path) : '';
+
+       # store contents of content file (if it exists, otherwise, pass back an empty string)
+    $content_file_path = $page->file_path.'/'.$page->template_name.'.txt';
+    $text = (file_exists($content_file_path)) ? file_get_contents($content_file_path) : '';
+        
+    # include shared variables for each page
+    $shared = (file_exists('./content/content.txt')) ? file_get_contents('./content/content.txt') : '';
     
-		# include shared variables for each page
-		$shared = (file_exists('./content/_shared.txt')) ? file_get_contents('./content/_shared.txt') : '';
-
-		# remove UTF-8 BOM and marker character in input, if present
+    # remove UTF-8 BOM and marker character in input, if present
     $merged_text = preg_replace('/^\xEF\xBB\xBF|\x1A/', '', array($shared, $text));
-
+    
     # merge shared content into text
-		$text = "\n".$merged_text[0]."\n-\n".$merged_text[1]."\n-\n";
-		
-		# standardize line endings
-		$text = preg_replace('/\r\n?/', "\n", $text);
-		
-		# pull out each key/value pair from the content file
-		preg_match_all('/(?<=\n)([a-z\d_\-]+?:[\S\s]*?)\n\s*?-\s*?\n/', $text, $matches);
-		
-		foreach($matches[1] as $match) {
-			# split the string by the first colon
-			$colon_split = explode(':', $match, 2);
-			# set a variable with a name of 'key' on the page with a value of 'value' 
-			$page->$colon_split[0] = 
-			  # if the 'value' contains a newline character, parse it as markdown
-			  (strpos($colon_split[1], "\n") === false) ? trim($colon_split[1]) : Markdown(trim($colon_split[1]));
-		}
+    $text = "\n".$merged_text[0]."\n-\n".$merged_text[1]."\n-\n";
+    
+    # standardize line endings
+    $text = preg_replace('/\r\n?/', "\n", $text);
+    
+    # pull out each key/value pair from the content file
+    preg_match_all('/(?<=\n)([a-z\d_\-]+?:[\S\s]*?)\n\s*?-\s*?\n/', $text, $matches);
+    
+    foreach($matches[1] as $match) {
+     # split the string by the first colon
+     $colon_split = explode(':', $match, 2);
+     # set a variable with a name of 'key' on the page with a value of 'value' 
+     $page->$colon_split[0] = 
+       # if the 'value' contains a newline character, parse it as markdown
+       (strpos($colon_split[1], "\n") === false) ? trim($colon_split[1]) : Markdown(trim($colon_split[1]));
+    }
 	}
 	
 	static function html_to_xhtml($value) {

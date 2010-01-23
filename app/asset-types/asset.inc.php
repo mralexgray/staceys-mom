@@ -21,10 +21,10 @@ Class Asset {
 		# store link path
 		$this->link_path = $this->construct_link_path($file_path);
 		
-    ob_start();
-    $firephp = FirePHP::getInstance(true);
+    // ob_start();
+    // $firephp = FirePHP::getInstance(true);
     // $firephp->log($this->link_path, ' wefweURL');
-    ob_end_flush();
+    // ob_end_flush();
 		# extract filename from path
 		$split_path = explode('/', $file_path);
 		$this->file_name = array_pop($split_path);

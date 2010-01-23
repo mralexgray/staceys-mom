@@ -1482,12 +1482,12 @@ class Markdown_Parser {
 	function _doAutoLinks_email_callback($matches) {
 		$address = $matches[1];
     ob_start();
-    $firephp = FirePHP::getInstance(true) or die("owiefjiwe");
-    $firephp->log($address, 'address');
+    // $firephp = FirePHP::getInstance(true) or die("owiefjiwe");
+    // $firephp->log($address, 'address');
 		$link = $this->encodeEmailAddress($address);
-    $firephp->log($link, 'link');
+    // $firephp->log($link, 'link');
     $hashed = $this->hashPart($link);
-    $firephp->log($hashed, 'hashed');
+    // $firephp->log($hashed, 'hashed');
 		return $this->hashPart($link);
     ob_end_flush();
 	}

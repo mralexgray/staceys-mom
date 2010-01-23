@@ -4,11 +4,7 @@ RewriteEngine on
 # ie. if in a folder named 'stacey', RewriteBase /stacey
 #RewriteBase /
 
-#ErrorDocument 404 /404.html
-
 # Rewrite all calls that are not in public directory to index.php
-#RewriteCond %{REQUEST_URI} !(css$|jpg$|png$|js$|/index.php$)
-#RewriteCond %{REQUEST_URI} !(/public/(.*)css$|/index.php?)
 RewriteCond %{REQUEST_URI} !(/public/docs/css/(.*)css$|/index.php?|^/feed.atom$)
 RewriteCond %{REQUEST_FILENAME} !(jpg$|png$|gif$)
 RewriteCond %{REQUEST_FILENAME} !(js$)
