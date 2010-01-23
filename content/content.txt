@@ -6,8 +6,7 @@ name: My Name
 -
 profession: my profession
 -
-email:
-<hi@yourdomain.com>
+email:hi@yourdomain.com
 -
 tagline: My tagline is great!
 -

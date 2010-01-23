@@ -147,6 +147,7 @@ Class PageData {
 		$page->is_last = $page->data['@index'] == $page->data['@siblings_count'];
 		# @is_first
 		$page->is_first = $page->data['@index'] == 1;
+		$page->data['@mailtolink'] = self::createMailto($page->data['@email']);
 	}
 	
 	static function create_collections($page) {
@@ -184,9 +185,28 @@ Class PageData {
 		$asset_collections = self::get_asset_collections($page->file_path);
 		foreach($asset_collections as $collection_name => $collection_files) eval('$page->'.$collection_name.' = $collection_files;');
 	}
-	
+	function createMailto($strEmail){
+    $strNewAddress = '';
+    for($intCounter = 0; $intCounter < strlen($strEmail); $intCounter++){
+      $strNewAddress .= "&#" . ord(substr($strEmail,$intCounter,1)) . ";";
+    }
+    $arrEmail = explode("&#64;", $strNewAddress);
+    $strTag = "<script "." type=".'"text/javascript"'.">\n";
+    $strTag .= "<!--\n";
+    $strTag .= "document.write('<a href=\"mai');\n";
+    $strTag .= "document.write('lto');\n";
+    $strTag .= "document.write(':" . $arrEmail[0] . "');\n";
+    $strTag .= "document.write('@');\n";
+    $strTag .= "document.write('" . $arrEmail[1] . "\">');\n";
+    $strTag .= "document.write('" . $arrEmail[0] . "');\n";
+    $strTag .= "document.write('@');\n";
+    $strTag .= "document.write('" . $arrEmail[1] . "<\/a>');\n";
+    $strTag .= "// -->\n";
+    $strTag .= "</script>";
+    return $strTag;
+  }
+  
 	static function create_textfile_vars($page) {
-
        # store contents of content file (if it exists, otherwise, pass back an empty string)
     $content_file_path = $page->file_path.'/'.$page->template_name.'.txt';
     $text = (file_exists($content_file_path)) ? file_get_contents($content_file_path) : '';

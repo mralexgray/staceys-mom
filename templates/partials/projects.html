@@ -4,7 +4,7 @@ if $siblings do
   foreach $siblings do
     <li class="col eight" id="proj@number">
 			<h2 onClick='toggleProject("@number")'>
-				<a name="project@number"></a>@title</a>
+				<a name="project@number">@title</a>
 			</h2>  
         <em class="date">@date</em>
         
@@ -20,9 +20,6 @@ if $siblings do
     			endif
 				</div>
 		</li>
-		<script type="text/javascript">
-      // $("#projdata@number").hide().fadeOut();
-		</script>
 	endforeach
 	</ol>
 endif
