@@ -25,7 +25,7 @@ Class Cache {
 			echo $page->parse_template();
 			# if cache folder is writable, write to it
 			if(is_writable('./app/_cache')) $this->write_cache();
-			else echo "\n".'<!-- Stacey('.Stacey::$version.'). -->';
+			else echo "\n".'<!-- Staceys Mom('.Stacey::$version.'). -->';
 		# end buffer
 		ob_end_flush();
 		return '';
