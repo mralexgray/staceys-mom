@@ -1,4 +1,4 @@
-# Stacey's Mom 0.1
+# Stacey's Mom v0.1
 
 ## Overview
 Stacey's Mom is based on [Stacey](http://staceyapp.com/).  The main difference is that the entire portfolio is contained on a single page (index.php).
